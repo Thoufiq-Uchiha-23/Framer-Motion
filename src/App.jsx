@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { motion } from 'framer-motion'
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 const App = () => {
-  return (
-    <div className='example-container bg-rose'>
-      <div></div>
-    </div>
-  )
-}
+  const [rotate, setRotate] = useState(false)
 
-export default App
+  return (
+    <div className="example-container bg-rose-900 min-h-screen flex justify-center items-center">
+      <motion.div animate={{rotate: rotate? 360 : 0}} initial={{}} onClick={()=>(setRotate(rotate))} className="rounded-2xl bg-blue-900 w-[300px] h-[300px]"></motion.div>
+    </div>
+  );
+};
+
+export default App;
